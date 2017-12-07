@@ -42,7 +42,7 @@ include("connectToDB.php"); //this file is used to connect to our database
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
-								<li><a href="index.html">Home</a></li>
+								<li><a href="index.php">Home</a></li>
 								<li>
 									<a href="">Our Menu</a>
 									<ul>
