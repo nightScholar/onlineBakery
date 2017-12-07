@@ -43,22 +43,7 @@ include("connectToDB.php"); //this file is used to connect to our database
 						<nav id="nav">
 							<ul>
 								<li><a href="index.php">Home</a></li>
-								<li>
-									<a href="">Our Menu</a>
-									<ul>
-										<li>
-											<a href="">Cakes</a>
-											<ul>
-												<li><a href="#">Pound Cakes</a></li>
-												<li><a href="#">Cheese Cakes</a></li>
-												<li><a href="#">Birthday Cakes</a></li>
-												<li><a href="#">Cup Cakes</a></li>
-											</ul>
-										</li>
-										<li><a href="#">Cookies</a></li>
-										<li><a href="#">Pies</a></li>
-									</ul>
-								</li>
+								<li><a href="our_menu.html">Menu</a></li>
 								<li><a href="order_online.html">Order Online</a></li>
 								<li><a href="about_us.html">About Us</a></li>
 							</ul>
@@ -85,7 +70,7 @@ include("connectToDB.php"); //this file is used to connect to our database
 				<section class="container">
 					<header class="major">
 						<h2 style='font-family: HelveticaRegular'>Proud to Offer</h2>
-						<span class="byline">Our Homemade Cakes</span>
+						<span class="byline">Our Handcrafted Cakes</span>
 					</header>
 					<div class="row no-collapse-1">
 						<section class="4u">
@@ -93,12 +78,12 @@ include("connectToDB.php"); //this file is used to connect to our database
 							<p>Red Velvet Cake</p>
 						</section>
 						<section class="4u">
-							<a href="#" class="image feature"><img src="images/Muffins.jpg" alt=""></a>
-							<p>Organic Blueberry Muffins</p>
+							<a href="#" class="image feature"><img src="images/Strawberry Cheescake_v2.jpg" alt=""></a>
+							<p>Strawberry Cheesecake</p>
 						</section>
 						<section class="4u">
-							<a href="#" class="image feature"><img src="images/cupcakes.jpg" alt=""></a>
-							<p>Cute little cupcakes</p>
+							<a href="#" class="image feature"><img src="images/Chocolate Bundt Cake.jpg" alt=""></a>
+							<p>Chocolate Bundt Cake </p>
 						</section>
 	
 					</div>
