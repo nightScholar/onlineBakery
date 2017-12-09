@@ -24,7 +24,6 @@ create table product_t
         productDescription          text         		not null,
         productPrice               	double             	not null,
         materialCost            	double 				not null,
-        productImage           		longblob 			not null,
        
     CONSTRAINT product_t_PK primary key (productID)
 ) ;
@@ -82,18 +81,18 @@ values
 
 
 INSERT INTO product_t
-(productID, productDescription, productPrice, materialCost, productImage)
+(productID, productDescription, productPrice, materialCost)
 values
-('1', 'Red Velvet Cake', '30', '15' , NULL),
-('2', 'Organic Blueberry Muffins', '10', '4' , NULL),
-('3', 'Carrot Cake Cupcakes', '10', '5' , NULL),
-('3', 'Chocolate Bundt Cake', '25', '12' , NULL),
-('3', 'Pound Cake', '20', '10' , NULL),
-('3', 'Cookies', '10', '3' , NULL),
-('3', 'Sweet Potato Pie', '17', '6' , NULL),
-('3', 'Strawberry Cheesecake', '35', '17' , NULL),
-('3', 'Cheesecake', '35', '14' , NULL),
-('3', 'Red Velvet Cupcakes', '13', '6' , NULL),
+('1', 'Red Velvet Cake', '30', '15'),
+('2', 'Organic Blueberry Muffins', '10', '4'),
+('3', 'Carrot Cake Cupcakes', '10', '5'),
+('3', 'Chocolate Bundt Cake', '25', '12'),
+('3', 'Pound Cake', '20', '10'),
+('3', 'Cookies', '10', '3'),
+('3', 'Sweet Potato Pie', '17', '6'),
+('3', 'Strawberry Cheesecake', '35', '17'),
+('3', 'Cheesecake', '35', '14'),
+('3', 'Red Velvet Cupcakes', '13', '6'),
 
 
 INSERT INTO order_t
