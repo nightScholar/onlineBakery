@@ -16,19 +16,20 @@ catch (PDOException $e)
 try
 {
 
-  $sql = 'SELECT productDescription FROM product_t';
-  $result = $pdo->query($sql);
+  $sql = 'INSERT INTO product_t
+  (productID, productDescription, productPrice, materialCost)
+  values
+  (12, "Boston Cream Pie", 40.00, 25.00)'; 
+  
+  $affectedRows = $pdo->exec($sql);
 }
 catch (PDOException $e)
 {
-  $error = 'Error fetching products names: ' . $e->getMessage();
-  include 'error.html.php';
+  $output = 'Error updating the product list: ' . $e->getMessage();
+  include 'output.html.php';
   exit();
 }
 
-while ($row = $result->fetch())
-{
-  $products[] = $row['productDescription'];
-}
+$output = "Insert $affectedRows rows." . "<br/>";
 
 include 'add_products.html.php';
