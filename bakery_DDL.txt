@@ -12,7 +12,7 @@ create table user_t
 		phoneNumber				varchar(20)			not null,
 		emailAddress			varchar(30)			not null,
 		username				varchar(30),			
-		password				varchar(20),
+		password				varchar(30),
 		userType				varchar(20)			not null,
 			
     CONSTRAINT user_t_PK primary key (userID)
@@ -69,12 +69,17 @@ delete from orderLine_t;
 INSERT INTO user_t
 (userID, firstName, lastName, phoneNumber, emailAddress, username, password, userType)
 values
-('1', 'John', 'Smith', '417-623-6541', 'jsmith@myemail.com', NULL, NULL, '1'),
-('2', 'Jennifer', 'Brown', '305-623-6541', 'jbrown@myemail.com', NULL, NULL, '1'),
-('3', 'Matthew', 'Davidson', '610-897-7321', 'mdavidson@myemail.com', NULL, NULL, '1'),
-('4', 'Kimberly', 'Hudson', '609-435-8888', 'khudson@myemail.com', NULL, NULL, '1'),
-('5', 'Bradley', 'Moore', '305-444-9876', 'bmoore@myemail.com', NULL, NULL, '1'),
-('6', 'Tyler', 'Wiggins', '917-345-5522', 'twiggins@myemail.com', NULL, NULL, '1');
+('1', 'John', 'Smith', '417-623-6541', 'jsmith@myemail.com', NULL, NULL, 'guest'),
+('2', 'Jennifer', 'Brown', '305-623-6541', 'jbrown@myemail.com', jenniferBrown, jenniferpassword, 'customer'),
+('3', 'Matthew', 'Davidson', '610-897-7321', 'mdavidson@myemail.com', matthewDavidson, matthewpassword, 'customer'),
+('4', 'Kimberly', 'Hudson', '609-435-8888', 'khudson@myemail.com', kimberlyHudson, kimberlypassword, 'customer'),
+('5', 'Bradley', 'Moore', '305-444-9876', 'bmoore@myemail.com', bradleyMoore, bradleypassword, 'customer'),
+('6', 'Tyler', 'Wiggins', '917-345-5522', 'twiggins@myemail.com', NULL, NULL, 'guest');
+('7', 'Adam', 'Cartwright', '610-854-3627', 'acartwright@myemail.com', adamCartwright, adamspassword, 'administrator');
+('8', 'Patricia', 'Kyle', '485-677-2541', 'pkyle@myemail.com', patriciaKyle, patriciapassword, 'administrator');
+('9', 'David', 'Pain', '412-258-3578', 'davidpain@myemail.com', davidPain, davidPainPassword, 'customer');
+('10', 'Justin', 'Shaw', '687-159-9854', 'jshaw@myemail.com', NULL, NULL, 'guest');
+
 
 INSERT INTO product_t
 (productID, productDescription, productPrice, materialCost, productImage)
