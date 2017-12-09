@@ -86,13 +86,13 @@ values
 ('1', 'Red Velvet Cake', '30', '15'),
 ('2', 'Organic Blueberry Muffins', '10', '4'),
 ('3', 'Carrot Cake Cupcakes', '10', '5'),
-('3', 'Chocolate Bundt Cake', '25', '12'),
-('3', 'Pound Cake', '20', '10'),
-('3', 'Cookies', '10', '3'),
-('3', 'Sweet Potato Pie', '17', '6'),
-('3', 'Strawberry Cheesecake', '35', '17'),
-('3', 'Cheesecake', '35', '14'),
-('3', 'Red Velvet Cupcakes', '13', '6'),
+('4', 'Chocolate Bundt Cake', '25', '12'),
+('5', 'Pound Cake', '20', '10'),
+('6', 'Cookies', '10', '3'),
+('7', 'Sweet Potato Pie', '17', '6'),
+('8', 'Strawberry Cheesecake', '35', '17'),
+('9', 'Cheesecake', '35', '14'),
+('10', 'Red Velvet Cupcakes', '13', '6'),
 
 
 INSERT INTO order_t
