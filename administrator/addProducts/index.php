@@ -42,7 +42,7 @@
           <!-- Nav -->
             <nav id="nav">
               <ul>
-                <li><a href="index.php">Home</a></li>
+                <li><a href="../index.php">Home</a></li>
                 <li><a href="our_menu.html">Menu</a></li>
                 <li><a href="order_online.html">Order Online</a></li>
                 <li><a href="about_us.html">About Us</a></li>
@@ -63,18 +63,24 @@
             that was pulled in from the shopping cart so the user can review what they ordered -->
             
             <form action="add_products.html.php" method="get">
-      <div><label for="productID">Product ID:</label>
-              <input type="number" name="productID" value="Product ID">
-      </div>
-      <div><label for="productDescription">Product Name:</label>
-              <input type="text" name="productDescription" placeholder="Product Name">
-      </div>
-      <div><label for="productPrice">Product Price:</label>
-              <input type="number" name="productPrice" value="Product Price">
-      </div>
-      <div><label for="number">Material Cost:</label>
-               <input type="number" name="materialCost" value="Material Cost">
-      </div>
+              <div><label for="productID">Product ID:</label>
+                <input type="number" name="productID" value="Product ID">
+              </div>
+
+              <div><label for="productDescription">Product Name:</label>
+                <input type="text" name="productDescription" placeholder="Product Name">
+              </div>
+
+              <div><label for="productPrice">Product Price:</label>
+                <input type="number" name="productPrice" value="Product Price">
+              </div>
+
+              <div><label for="number">Material Cost:</label>
+                <input type="number" name="materialCost" value="Material Cost">
+               </div>
+               
+               <br>
+
               <input type="submit" value="Add Product">
             </form>
 
