@@ -68,16 +68,16 @@ delete from orderLine_t;
 INSERT INTO user_t
 (userID, firstName, lastName, phoneNumber, emailAddress, username, password, userType)
 values
-('1', 'John', 'Smith', '417-623-6541', 'jsmith@myemail.com', NULL, NULL, 'guest'),
-('2', 'Jennifer', 'Brown', '305-623-6541', 'jbrown@myemail.com', jenniferBrown, jenniferpassword, 'customer'),
-('3', 'Matthew', 'Davidson', '610-897-7321', 'mdavidson@myemail.com', matthewDavidson, matthewpassword, 'customer'),
-('4', 'Kimberly', 'Hudson', '609-435-8888', 'khudson@myemail.com', kimberlyHudson, kimberlypassword, 'customer'),
-('5', 'Bradley', 'Moore', '305-444-9876', 'bmoore@myemail.com', bradleyMoore, bradleypassword, 'customer'),
-('6', 'Tyler', 'Wiggins', '917-345-5522', 'twiggins@myemail.com', NULL, NULL, 'guest');
-('7', 'Adam', 'Cartwright', '610-854-3627', 'acartwright@myemail.com', adamCartwright, adamspassword, 'administrator');
-('8', 'Patricia', 'Kyle', '485-677-2541', 'pkyle@myemail.com', patriciaKyle, patriciapassword, 'administrator');
-('9', 'David', 'Pain', '412-258-3578', 'davidpain@myemail.com', davidPain, davidPainPassword, 'customer');
-('10', 'Justin', 'Shaw', '687-159-9854', 'jshaw@myemail.com', NULL, NULL, 'guest');
+(1, 'John', 'Smith', '417-623-6541', 'jsmith@myemail.com', NULL, NULL, 'guest'),
+(2, 'Jennifer', 'Brown', '305-623-6541', 'jbrown@myemail.com', 'jenniferBrown', 'jenniferpassword', 'customer'),
+(3, 'Matthew', 'Davidson', '610-897-7321', 'mdavidson@myemail.com', 'matthewDavidson', 'matthewpassword', 'customer'),
+(4, 'Kimberly', 'Hudson', '609-435-8888', 'khudson@myemail.com', 'kimberlyHudson', 'kimberlypassword', 'customer'),
+(5, 'Bradley', 'Moore', '305-444-9876', 'bmoore@myemail.com', 'bradleyMoore', 'bradleypassword', 'customer'),
+(6, 'Tyler', 'Wiggins', '917-345-5522', 'twiggins@myemail.com', NULL, NULL, 'guest'),
+(7, 'Adam', 'Cartwright', '610-854-3627', 'acartwright@myemail.com', 'adamCartwright', 'adamspassword', 'administrator'),
+(8, 'Patricia', 'Kyle', '485-677-2541', 'pkyle@myemail.com', 'patriciaKyle', 'patriciapassword', 'administrator'),
+(9, 'David', 'Pain', '412-258-3578', 'davidpain@myemail.com', 'davidPain', 'davidPainPassword', 'customer'),
+(10, 'Justin', 'Shaw', '687-159-9854', 'jshaw@myemail.com', NULL, NULL, 'guest');
 
 
 INSERT INTO product_t
@@ -92,7 +92,7 @@ values
 ('7', 'Sweet Potato Pie', '17', '6'),
 ('8', 'Strawberry Cheesecake', '35', '17'),
 ('9', 'Cheesecake', '35', '14'),
-('10', 'Red Velvet Cupcakes', '13', '6'),
+('10', 'Red Velvet Cupcakes', '13', '6');
 
 
 INSERT INTO order_t
