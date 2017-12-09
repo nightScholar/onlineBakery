@@ -21,6 +21,13 @@
 			<link rel="stylesheet" href="css/style.css" />
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+
+		<style>
+			table, th, td 
+			{
+    			border: 1px solid black;
+			}
+		</style>
 	</head>
 	<body class="no-sidebar" id='about_background'>
 
@@ -29,7 +36,7 @@
 				<div class="container">
 						
 					<!-- Logo -->
-						<h1><a href="#" id="logo">Sign in</a></h1>
+						<h1><a href="#" id="logo">Shopping Cart</a></h1>
 					
 					<!-- Nav -->
 						<nav id="nav">
@@ -48,13 +55,53 @@
 			<div id="main" class="wrapper style1">
 				<div class="container">
 					<section>
-						<div>
-							<form>
-								<h2>Sign in</h2>
-								<input type="email" id="inputEmail" placeholder="Username" required>
-								<input type="password" id="inputPassword" placeholder="Password" required>	
-							</form>
-						</div>
+						<!--We could use this section template below to pull in the information
+						that the customer ordered from the order_online.html page (feel free to delete anything that you do not need. Once the user
+						clicks the Sumbit Order button, we should first check to see if they are logged in, if they are logged in they can move onto the  
+						review order page with all the information from their shopping cart being pulled in. If they are not logged in, they should be directed to the login page.
+						
+						Once the user logs in we should check to make sure that they have a customer login and not an Administrator login.
+						If they have an administrator login they should not be allowed to order any products. Only people with
+						customer usernames and passwords should be able to order products from the bakery. This is slightly different from our
+						EER design (we can edit that to reflect the new change), it might just be a little easier at this point to just have
+						all users who want to buy any baked goods to have a username and password. If we have some time left, we could build
+						in the Guest information once we get a better idea of how all of this works -->
+
+						<form action="review_order.php" method="post">
+						 <table >
+						 	<tr>
+						 	    <th >Product Name</th>
+						 		<th >Price</th>
+						 		<th >Quantity</th>
+						     <?php foreach ($employees as $employee) 
+						     {
+						    
+						     
+						     
+						     ?>
+						  
+						       <tr>
+						       <td > <?php $salary = $employee['salary'];
+						     
+						     	$bdate=$employee['bdate']; 
+						 		echo $employee['lname']; ?> </td>
+						        <td > <?php echo $employee['fname']; ?> </td>
+						  
+						        
+						       <?php
+						      $empCont=contribution($salary,$bdate);
+						       
+						      ?> 
+						        <td style="text-align:right"> <?php echo $empCont; ?></td>
+						        <td style="text-align:right"> <?php echo'$' . number_format($empCont, 2) ?></td>
+						        <td style="text-align:right"> <?php printf("$%01.2f", $empCont);  ?></td>
+						        
+						          
+						       </tr>
+						     <?php }  ?>
+						   </table>
+						   <input type="submit" value="Submit Order">
+						</form>
 					</section>
 				</div>
 			</div>

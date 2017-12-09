@@ -21,6 +21,13 @@
 			<link rel="stylesheet" href="css/style.css" />
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+
+		<style>
+			table, th, td 
+			{
+    			border: 1px solid black;
+			}
+		</style>
 	</head>
 	<body class="no-sidebar" id='about_background'>
 
@@ -29,7 +36,7 @@
 				<div class="container">
 						
 					<!-- Logo -->
-						<h1><a href="#" id="logo">Sign in</a></h1>
+						<h1><a href="#" id="logo">Shopping Cart</a></h1>
 					
 					<!-- Nav -->
 						<nav id="nav">
@@ -48,13 +55,32 @@
 			<div id="main" class="wrapper style1">
 				<div class="container">
 					<section>
-						<div>
-							<form>
-								<h2>Sign in</h2>
-								<input type="email" id="inputEmail" placeholder="Username" required>
-								<input type="password" id="inputPassword" placeholder="Password" required>	
-							</form>
-						</div>
+						<!--Once we have already checked to make sure the user is logged in and all our checks have passed, once
+						the user hits the Submit Order button, a thank you page should pop up, thanking them for their order -->
+
+						<!-- You may need to format this table a bit to put the information in it that you need, this should be the information
+						that was pulled in from the shopping cart so the user can review what they ordered -->
+						 <table >
+						 	<tr>
+						 	    <th >Product Name</th>
+						 		<th >Price</th>
+						 		<th >Quantity</th>
+						  
+						       <tr>
+						       <td > <?php $salary = $employee['salary'];
+						     
+						     	$bdate=$employee['bdate']; 
+						 		echo $employee['lname']; ?> </td>
+						        <td > <?php echo $employee['fname']; ?> </td>
+					 
+						        <td style="text-align:right"> <?php echo $empCont; ?></td>
+						        <td style="text-align:right"> <?php echo'$' . number_format($empCont, 2) ?></td>
+						        <td style="text-align:right"> <?php printf("$%01.2f", $empCont);  ?></td>
+						        
+						          
+						       </tr>
+						     <?php }  ?>
+						   </table>
 					</section>
 				</div>
 			</div>

@@ -21,6 +21,19 @@
 			<link rel="stylesheet" href="css/style.css" />
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+
+		<style>
+			#thank_you 
+			{
+    			font-size: 60px;
+    			text-align: center;
+			}
+			#bakery
+			{
+				font-size: 40px;
+				text-align: center;
+			}
+		</style>
 	</head>
 	<body class="no-sidebar" id='about_background'>
 
@@ -29,7 +42,6 @@
 				<div class="container">
 						
 					<!-- Logo -->
-						<h1><a href="#" id="logo">Sign in</a></h1>
 					
 					<!-- Nav -->
 						<nav id="nav">
@@ -48,13 +60,8 @@
 			<div id="main" class="wrapper style1">
 				<div class="container">
 					<section>
-						<div>
-							<form>
-								<h2>Sign in</h2>
-								<input type="email" id="inputEmail" placeholder="Username" required>
-								<input type="password" id="inputPassword" placeholder="Password" required>	
-							</form>
-						</div>
+						<p id="thank_you">Your order has been received!</p>
+						<p id="bakery">Thanks for shopping at Shawn's Bakery</p>
 					</section>
 				</div>
 			</div>

@@ -63,7 +63,7 @@
 			</div>
 
 		<!-- Featured -->
-			<div class="wrapper style2">
+			<!--<div class="wrapper style2">
 				<section class="container">
 					<header class="major">
 						<h2 style='font-family: HelveticaRegular'>Proud to Offer</h2>
@@ -85,16 +85,16 @@
 	
 					</div>
 				</section>
-			</div>
+			</div>-->
 
 		<!-- Main -->
 
 		<!-- Footer -->
-			<div id="footer">
-				<div class="container">
+			<!-- <div id="footer">
+				<div class="container"> -->
 
 					<!-- Lists -->
-						<div class="row">
+						<!-- <div class="row">
 							<div class="8u">
 								<section>
 									<header class="major">
@@ -128,15 +128,15 @@
 									</ul>	
 								</section>
 							</div>
-						</div>
+						</div> -->
 
 					<!-- Copyright -->
-						<div class="copyright">
+						<!-- <div class="copyright">
 							Design: <a href="http://templated.co">TEMPLATED</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)
 						</div>
 
 				</div>
-			</div>
+			</div> -->
 
 	</body>
 </html>
