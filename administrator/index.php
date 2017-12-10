@@ -39,6 +39,7 @@
 								<li><a href="viewProducts/index.php">View Products</a></li>
 								<li><a href="addProducts/index.php">Add Products</a></li>
 								<li><a href="deleteProducts/index.php">Delete Products</a></li>
+								<li><a href="popularProducts/index.php">Popular Products</a></li>
 								<li><a href="about_us.html">About Us</a></li>
 							</ul>
 						</nav>
