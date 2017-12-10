@@ -49,13 +49,37 @@ $output = "Insert $affectedRows rows." . "<br/>";
     <meta charset="utf-8">
     <title>Products Added</title>
   </head>
+
+ <style>
+     table, th, td 
+      {
+           border: 1px solid black;
+      }
+      .text
+      {
+        text-align: center;
+      }
+    </style>
   <body>
-    <p>The following product has been entered into the database</p>
-    <?php
+    <p>The following product has been entered into the database. See detials below:</p>
 
-      echo $productDescription;
-    ?>
+    <table>
+      <tr>
+        <th>Product ID</th>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>Material Cost</th>
+      </tr>
+      <tr>
+        <td class="text"><?php echo $productID?></td>
+        <td class="text"><?php echo $productDescription?></td>
+        <td class="text">$<?php echo $productPrice?></td>
+        <td class="text">$<?php echo $materialCost?></td>
+      </tr>
+    </table>
 
+    <br>
+     <a href="../index.php">Back to Administrator Homepage</a>
 
   </body>
 </html>

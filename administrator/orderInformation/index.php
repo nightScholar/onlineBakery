@@ -31,16 +31,16 @@
 				<div class="container">
 						
 					<!-- Logo -->
-						<h1><a href="#" id="logo">Shawn's Bakery</a></h1>
+						<h1><a href="#" id="logo">Order Information</a></h1>
 					
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
-								<li><a href="viewProducts/index.php">View Products</a></li>
-								<li><a href="addProducts/index.php">Add Products</a></li>
-								<li><a href="deleteProducts/index.php">Delete Products</a></li>
-								<li><a href="popularProducts/index.php">Popular Products</a></li>
-								<li><a href="about_us.html">About Us</a></li>
+								<li><a href="pendingDeliveryOrders/index.php">Pending Delivery Orders</a></li>
+								<li><a href="pendingPickupOrders/index.php">Pending Pickup Orders</a></li><br>
+								<li><a href="allCompletedOrders/index.php">All Completed Orders</a></li>
+								<li><a href="allPendingOrders/index.php">All Pending Orders</a></li><br>
+								<li><a href="../index.php">Administrator Home</a></li>
 							</ul>
 						</nav>
 
@@ -52,10 +52,10 @@
 									<header class="major">
 										<h2>Welcome to Shawn's bakery!</h2>
 									</header>
-									<a href="login.html" class="button alt">Sign In</a>
+									
 									<br>
 									<br>
-									<a href="create_account.html" class="button alt">Sign Out</a>
+									
 								</section>			
 							</div>
 						</div>
