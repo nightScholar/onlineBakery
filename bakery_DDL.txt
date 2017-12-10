@@ -34,7 +34,7 @@ create table order_t
 		userID            		int 				not null,
 		orderDate				date				not null,
 		orderStatus				varchar(15)			not null,
-		deliveryOption			boolean				not null,
+		deliveryOption			varchar(20)				not null,
 		deliveryAddress			varchar(60),
 		deliveryCity			varchar(60),
 		deliveryState			varchar(60),
