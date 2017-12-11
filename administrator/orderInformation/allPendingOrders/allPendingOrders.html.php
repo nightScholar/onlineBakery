@@ -11,10 +11,6 @@
           display: inline-block;
           float: left;
         }
-        #text
-        {
-          text-align: left;
-        }
     </style>
   </head>
       <body>
@@ -37,7 +33,7 @@
             </tr>
   
             <tr> <?php foreach ($fisrtNames as $firstName) : ?>
-              <td id="text"> <?php echo $firstName?> </td>
+              <td> <?php echo $firstName?> </td>
             </tr>
                 <?php endforeach; ?>
           </table>

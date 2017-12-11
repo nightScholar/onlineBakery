@@ -40,6 +40,10 @@
 								<li><a href="pendingPickupOrders/index.php">Pending Pickup Orders</a></li><br>
 								<li><a href="allCompletedOrders/index.php">All Completed Orders</a></li>
 								<li><a href="allPendingOrders/index.php">All Pending Orders</a></li><br>
+								<li><a href="largestOrders/index.php">Largest Orders by Total Price</a></li>
+								<li><a href="totalOrderProfit/index.php">Total Profit of All Orders</a></li><br>
+								<li><a href="redVelvetCakeOrders/index.php">Red Velvet Cake Orders</a></li>
+								<li><a href="redVelvetCakeOrdersByUser/index.php">Red Velvet Cake Orders By User</a></li><br>
 								<li><a href="../index.php">Administrator Home</a></li>
 							</ul>
 						</nav>
