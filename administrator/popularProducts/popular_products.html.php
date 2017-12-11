@@ -17,6 +17,7 @@
         }
     </style>
   </head>
+  <body>
       <p>Here is a list of the most ordered products:</p>
 
           <table>
@@ -51,6 +52,13 @@
               </tr>
                 <?php endforeach; ?>
           </table>
+
+          <br><br><br>
+
+          <p><a href="../index.php">Back to Administrator Homepage</a></p>
+
+    </body>
+</html>
  
    
   
