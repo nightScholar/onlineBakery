@@ -426,7 +426,7 @@
 		input[type="reset"]:hover,
 		input[type="button"]:hover,
 		.button:hover {
-			background-color: #32b777;
+			background-color: red;
 		}
 
 		input[type="submit"].fit,
