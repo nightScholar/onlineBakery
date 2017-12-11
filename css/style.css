@@ -130,13 +130,13 @@ input[type=text], input[type=password] {
 
 /* Set a style for all buttons */
  button {
-    background-color: #32b777;
+    background-color: red;
     color: white;
     font-size:larger;
     padding: 14px 20px;
     margin: 8px 0;
     border: none;
-    border-radius: 15px;
+    border-radius: 40px;
     cursor: pointer;
     width: 100%;
     font-family: HelveticaRegular;
@@ -145,6 +145,8 @@ input[type=text], input[type=password] {
 button:hover {
     opacity: 0.7;
     color: pink;
+    background-color: #32b777;
+
 }
 
 /* Extra styles for the cancel button */
@@ -195,7 +197,7 @@ span.psw {
 .modal-content {
     background-color: #FFA69E;
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-    border: 1px solid #888;
+    border: 3px solid #888;
     width: 80%; /* Could be more or less, depending on screen size */
     float: right;
 }
@@ -254,7 +256,7 @@ span.psw {
 		background: none;
 		border: solid 1px #888888;
 		color: inherit;
-		display: block;
+		display: inline-block;
 		outline: 0;
 		padding: 0.75em;
 		text-decoration: none;
