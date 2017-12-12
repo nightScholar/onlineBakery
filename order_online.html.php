@@ -1,7 +1,6 @@
 <?php
 	
 	include('connectToDB.php');
-	include('session.php');
 	
 try
 {
@@ -20,6 +19,8 @@ while ($row = $result->fetch())
 {
   $products[] = $row['productDescription'];
 }
+
+include 'shopping_cart.php';
 
 ?>
 
