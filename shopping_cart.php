@@ -83,7 +83,7 @@
 								</tr>
 								<tr>
 									
-									 <?php $_POST['']
+									 <?php 
 									 foreach ($products as $productDescription): ?>
 									<blockquote>
 										<p>
