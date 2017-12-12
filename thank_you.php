@@ -1,3 +1,6 @@
+<?php
+	include('session.php');
+	?>
 <!DOCTYPE HTML>
 <!--
 	Horizons by TEMPLATED
@@ -47,9 +50,9 @@
 						<nav id="nav">
 							<ul>
 								<li><a href="index.php">Home</a></li>
-								<li><a href="our_menu.html">Menu</a></li>
-								<li><a href="order_online.html">Order Online</a></li>
-								<li><a href="about_us.html">About Us</a></li>
+								<li><a href="our_menu.html.php">Menu</a></li>
+								<li><a href="order_online.html.php">Order Online</a></li>
+								<li><a href="about_us.html.php">About Us</a></li>
 							</ul>
 						</nav>
 

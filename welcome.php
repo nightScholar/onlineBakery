@@ -1,7 +1,6 @@
 <?php
 	include('session.php');
 	?>
-
 <!DOCTYPE HTML>
 <!--
 	Horizons by TEMPLATED
@@ -39,10 +38,10 @@
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
-								<li><a href="index.php">Home</a></li>
-								<li><a href="our_menu.html">Menu</a></li>
-								<li><a href="order_online.html">Order Online</a></li>
-								<li><a href="about_us.html">About Us</a></li>
+								<li><a href="welcome.php">Home</a></li>
+								<li><a href="our_menu.html.php">Menu</a></li>
+								<li><a href="order_online.html.php">Order Online</a></li>
+								<li><a href="about_us.html.php">About Us</a></li>
 							</ul>
 						</nav>
 
@@ -52,9 +51,9 @@
 							<div class="container">
 								<section>
 									<header class="major">
-										<h2>Welcome to Shawn's bakery! <?php echo $login_session; ?> </h2>
+										<h2>Welcome to Shawn's bakery! <span style="color: #A5FFD6"><?php echo $login_session; ?></span> </h2>
 									</header>
-									<!-- create Modal login in forms -->
+									<!-- create Modal login out button -->
 									<button onclick='logout()' style="width:auto;">Log Out</a></button>
 									<script>
 										function logout(){
