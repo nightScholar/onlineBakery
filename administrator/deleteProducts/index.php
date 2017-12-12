@@ -1,8 +1,11 @@
 <?php
+
+  include('../../session.php');
+
 try
 {
 
-  $pdo = new PDO('mysql:host=localhost;dbname=bakery', 'tsolomonphillips', 'raidTombs2463%');
+  $pdo = new PDO('mysql:host=localhost;dbname=bakery', 'root', 'root');
   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   $pdo->exec('SET NAMES "utf8"');
 }
@@ -69,6 +72,13 @@ while ($row = $result->fetch())
       </form>
     <br>
     <a href="../index.php">Back to Administrator Homepage</a>
+        <!-- create Modal login out button -->
+                  <button onclick='logout()' style="width:auto;">Log Out</a></button>
+                  <script>
+                    function logout(){
+                      window.open('../logout.php',"_self");
+                    }
+                  </script>
     </section>
 
   </body>

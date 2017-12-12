@@ -115,6 +115,7 @@
 	}
 
 /* Form */
+/* Full-width input fields */
 input[type=text], input[type=password] {
     width: 100%;
     padding: 12px 20px;
@@ -175,7 +176,7 @@ span.psw {
 /* The Modal (background) */
 .modal {
     display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
+    position: relative; /* Stay in place */
     z-index: 1; /* Sit on top */
     left: 0;
     top: 0;
@@ -189,6 +190,7 @@ span.psw {
 
 /* Modal Content/Box */
 .modal-content {
+	display: none;
     background-color: #fefefe;
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
