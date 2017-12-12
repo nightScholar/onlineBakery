@@ -14,7 +14,7 @@
     </style>
   </head>
       <body>
-      <p>Pending Delivery Orders:</p>
+      <p>All Pending Orders:</p>
 
           <table>
             <tr>

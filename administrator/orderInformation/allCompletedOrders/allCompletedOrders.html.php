@@ -14,7 +14,7 @@
     </style>
   </head>
       <body>
-      <p>Pending Delivery Orders:</p>
+      <p>All Completed Orders:</p>
 
           <table>
             <tr>
@@ -115,7 +115,7 @@
                 <?php endforeach; ?>
           </table>
            
-            <br> <br> <br> <br>
+            <br> <br> <br> <br> <br>
             <p><a href="../../index.php">Back to Administrator Homepage</a></p>
 
   </body>

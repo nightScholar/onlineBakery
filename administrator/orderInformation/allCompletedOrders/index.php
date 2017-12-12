@@ -20,14 +20,13 @@ try
             order_t.deliveryState, order_t.deliveryZipcode, order_t.orderStatus, order_t.deliveryOption
           FROM order_t, user_t
           WHERE order_t.userID = user_t.userID
-          AND order_t.orderStatus = 'received'
-          AND order_t.deliveryOption = 'delivery'";
+          AND order_t.orderStatus = 'completed'";
   
   $result = $pdo->query($sql);
 }
 catch (PDOException $e)
 {
-  $error = 'Error fetching pending delivery orders: ' . $e->getMessage();
+  $error = 'Error fetching all completed orders: ' . $e->getMessage();
   include 'error.html.php';
   exit();
 }
@@ -45,4 +44,4 @@ while ($row = $result->fetch())
   $deliveryOptions[] =  $row['deliveryOption'];
 }
 
-include 'pendingDeliveryOrders.html.php';
+include 'allCompletedOrders.html.php';

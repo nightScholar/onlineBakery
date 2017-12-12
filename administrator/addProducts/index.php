@@ -37,15 +37,12 @@
         <div class="container">
             
           <!-- Logo -->
-            <h1><a href="../index.php" id="logo">Administrator</a></h1>
+            <h1><a href="../index.php" id="logo">Add Products</a></h1>
           
           <!-- Nav -->
             <nav id="nav">
               <ul>
-                <li><a href="../index.php">Home</a></li>
-                <li><a href="our_menu.html">Menu</a></li>
-                <li><a href="order_online.html">Order Online</a></li>
-                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="../index.php">Administrator Home</a></li>
               </ul>
             </nav>
 
