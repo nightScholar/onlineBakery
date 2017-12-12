@@ -1,10 +1,12 @@
 <?php
+	
+	include('connectToDB.php');
 	include('session.php');
 	
 try
 {
 
-  $sql = 'SELECT productDescription, productPrice, FROM product_t';
+  $sql = 'SELECT productDescription, productPrice FROM product_t';
   $result = $pdo->query($sql);
 }
 catch (PDOException $e)
@@ -18,8 +20,6 @@ while ($row = $result->fetch())
 {
   $products[] = $row['productDescription'];
 }
-
-include 'shopping_cart.php';
 
 ?>
 
