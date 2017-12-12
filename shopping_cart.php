@@ -71,6 +71,7 @@
 						 	    <th >Product Name</th>
 						 		<th >Price</th>
 						 		<th >Quantity</th>
+						 		
 						     <?php foreach ($employees as $employee) 
 						     {
 						    

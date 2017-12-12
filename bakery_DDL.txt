@@ -6,13 +6,13 @@ drop table if EXISTS orderLine_t;
 
 create table user_t 
 (
-        userID          		int					not null,
+        userID          		int					not null AUTO_INCREMENT,
 		firstName				varchar(60)			not null,
 		lastName				varchar(60)			not null,
 		phoneNumber				varchar(20)			not null,
 		emailAddress			varchar(30)			not null,
 		username				varchar(30),			
-		password				varchar(30),
+		password				varchar(120),
 		userType				varchar(20)			not null,
 			
     CONSTRAINT user_t_PK primary key (userID)

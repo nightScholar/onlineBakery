@@ -1,51 +1,128 @@
 <?php
-	//start the session before html tag
-	session_start();
-	include("config.php");
-      $error = "";
+     try
+{
 
-	if($_SERVER["REQUEST_METHOD"] == "POST"){
-		// username and password sent from form 
-		$myusername = mysqli_real_escape_string($db,$_POST['username']);
-      	$mypassword = mysqli_real_escape_string($db,$_POST['password']); 
-      	$sql = "SELECT password, userType FROM `user_t` WHERE username = '$myusername'";
-      	$result = mysqli_query($db,$sql);
-
-            if ($result) {
-
-      	$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-            
-            // get bcrypt hashing password
-            $hash = $row['password'];
-            $error1 = 'this is:'.$hash;
-            $error2 = 'passowrd input:'.$mypassword;
-            
-      	
-      	$count = mysqli_num_rows($result);
-      	$privilege = $row['userType'];
-
-      	// one and only one row matches the login info
-      	
-      		if (password_verify($mypassword, $hash)){
-                      $_SESSION['login_user'] = $myusername;
-                  
-                  if ($privilege == "administrator"){
-                        header("Location: administrator/index.php");
-                        exit();
-                  } else {
-                        header("location: welcome.php");
-                        exit();
-                  }
-                  } else{
-                        $error = "Sorry!!Your password is not valid!";
-                  }
-      		
-      	
-
-	}else {
-            $error = "Sorry! Your Login Name or Password is invalid!";
-      }
+  $pdo = new PDO('mysql:host=localhost;dbname=bakery', 'Fzuo', '921026');
+  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  $pdo->exec('SET NAMES "utf8"');
 }
+catch (PDOException $e)
+{
+  $error = 'Unable to connect to the database server.';
+  
+  exit();
+}
+$error = "";
+
+ if($_SERVER["REQUEST_METHOD"] == "POST"){
+      
+      global $FirstName,$LastName,  $Email,  $phone,  $username,  $Password, $error;
+      
+
+
+
+      if (isset($_POST["ufname2"]))
+      {    
+          // Instructions if $_POST['value'] exist
+          $FirstName = $_POST["ufname2"];    
+      }    
+      if (isset($_POST["ulname2"]))    
+      {    
+          // Instructions if $_POST['value'] exist
+          $LastName = $_POST["ulname2"];    
+      }         
+     if(isset($_POST['uemail2'])){
+          $Email = $_POST["uemail2"];
+     }
+      if (isset($_POST["uphone2"]))    
+      {    
+          // Instructions if $_POST['value'] exist
+          $phone = $_POST["uphone2"];
+        } 
+       if (isset($_POST["username2"]))    
+        {    
+          // Instructions if $_POST['value'] exist
+         $username = $_POST["username2"];
+        } 
+       if (isset($_POST["password2"]))    
+        {    
+          // Instructions if $_POST['value'] exist
+         $password = $_POST["password2"];
+        } 
+     
+      //hash 
+        $hash = password_hash($password, PASSWORD_DEFAULT);
+      
+      
+      
+      try{
+        $sql = "Insert into user_t (firstName, lastName, phoneNumber, emailAddress, username, password, userType)
+        values('$FirstName', '$LastName', '$phone','$Email','$username', '$hash','customer')";
+        $pdo->exec($sql);
+      }
+      catch(PDOException $e)
+      {
+      $error = "The error is: " .$e;
+      }
+  }
+
+
+
+	// //start the session before html tag
+	// session_start();
+	// include("config.php");
+ //      $error = "";
+
+	// if($_SERVER["REQUEST_METHOD"] == "POST"){
+ //            //checking for nonempty user data
+ //            if(!empty($_POST['ufname']) && !empty($_POST['ulname']) && !empty($_POST['uphone']) && !empty($_POST['uemail']) && !empty($_POST['username']) && !empty($_POST['password'])){
+ //                  //username and password sent from form
+ //                  $ufname = mysqli_real_escape_string($db,$_POST['ufname2']);
+ //                  $ulname = mysqli_real_escape_string($db,$_POST['ulname2']);
+ //                  $uphone = mysqli_real_escape_string($db,$_POST['uphone2']);
+ //                  $uemail = mysqli_real_escape_string($db,$_POST['uemail2']);
+ //                  $myusername = mysqli_real_escape_string($db,$_POST['username2']);
+ //                  $mypassword = mysqli_real_escape_string($db,$_POST['password2']);
+ //                        $hash = password_hash($password, PASSWORD_BCRYPT, array('cost'=>11));
+
+
+ //                  $sql = "SELECT * FROM `user_t` WHERE username = '$myusername'";
+ //                  $result = mysqli_query($db,$sql);
+
+ //                  if ($result === false) {
+
+ //                        $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+
+ //                        //save hashed password to database
+                        
+ //                        $sql = "Insert into user_t (firstName, lastName, phoneNumber, emailAddress, username, password, userType)
+ //                        values('$ufname', '$ulname', '$uphone','$uemail','$myusername', '$hash','customer')";
+ //                        $query = mysqli_query($db, $sql);
+ //                        if ($query){
+ //                              $error = 'Your registeration is completed! Please login in.';
+ //                              header("location: sign_in.html.php");
+ //                              exit;
+
+ //                        }else {
+ //                              $error = 'Error in registeration!';
+ //                              header("location: sign_in.html.php");
+ //                              exit();
+ //                        }
+ //                  }else{
+ //                        $error = "Sorry you have an account already! Please login instead.";
+ //                        header("location: sign_in.html.php");
+ //                        exit();
+ //                  }
+ //            }else {
+ //                 $error = 'Sorry the registeration fields can not be empty! Please Try again!';
+ //                  header("location: sign_in.html.php");
+ //                  exit();
+ //            }     
+
+ //      }
+            
+      	
+
 ?>
 <!DOCTYPE HTML>
 <!--
@@ -94,8 +171,6 @@
                                                       <header class="major">
                                                             <h2>Welcome to Shawn's bakery!</h2>
                                                             <h2 style="color: red"><?php echo $error; ?></h2>
-                                                            <h2 style="color: red"><?php echo $error1; ?></h2>
-                                                            <h2 style="color: red"><?php echo $error2; ?></h2>
                                                       </header>
                                                       <!-- create Modal login in forms -->
                                                       <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
@@ -122,24 +197,24 @@
                                                             <div style = "font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div>
                                                       </div>
                                                       <div id="id02" class="modal">
-                                                            <form class="modal-content animate" action="sign_up.php">
+                                                            <form class="modal-content animate" action="sign_up.php" method="POST">
                                                                   <div class="imgcontainer">
                                                                         <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
                                                                   </div>
                                                                   <div class="modal_container">
                                                                         <label style="float:Left"><b>First Name</b></label>
-                                                                        <input type="text" placeholder="First Name" name="ufname">
+                                                                        <input type="text" placeholder="First Name" name="ufname2">
                                                                         <label style="float:Left"><b>Last Name</b></label>
-                                                                        <input type="text" placeholder="Last Name" name="ulname">
+                                                                        <input type="text" placeholder="Last Name" name="ulname2">
                                                                         <label style="float:Left"><b>Phone Number</b></label>
-                                                                        <input type="text" placeholder="Enter Phone Number" name="uphone">
+                                                                        <input type="text" placeholder="Enter Phone Number" name="uphone2">
                                                                         <label style="float:Left"><b>Email</b></label>
-                                                                        <input type="Email" placeholder="Enter Email" name="uemail">
+                                                                        <input type="Email" placeholder="Enter Email" name="uemail2">
                                                                         <label style="float:Left"><b>User Name</b></label>
-                                                                        <input type="text" placeholder="Enter Username" name="uname">
+                                                                        <input type="text" placeholder="Enter Username" name="username2">
                                                                         <label style="float:Left"><b>Password</b></label>
-                                                                        <input type="password" placeholder="Enter Password" name="psw">
-                                                                        <button type="submit">Sign Up</button>
+                                                                        <input type="password" placeholder="Enter Password" name="password2">
+                                                                        <button type="submit" >Sign Up</button>
                                                                         <input type="checkbox" checked="checked"> Remember me
                                                                   </div>
                                                                   <div class="modal_container" style="background-color:#f1f1f1">
