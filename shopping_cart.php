@@ -66,38 +66,25 @@
 						in the Guest information once we get a better idea of how all of this works -->
 
 						
+						
 						<form action="review_order.php" method="post">
-						 <table >
-						 	<tr>
-						 	    <th >Product Name</th>
-						 		<!--<th >Price</th>
-						 		<th >Quantity</th>-->
 						 		
 						    <p>Shopping Cart:</p>
 
-							<table>
+							 <table>
 								<tr>
-									<th>Product Name</th>
-									<th>Product Name</th>
-									<th>Price</th>
+									<th>Proudct Name</th>
 								</tr>
-								<tr>
-									
-									 <?php 
-									 foreach ($products as $productDescription): ?>
-									<blockquote>
-										<p>
-									<?php echo htmlspecialchars($productDescription, ENT_QUOTES, 'UTF-8'); ?>
-									</p>
-									</blockquote>
+  
+								<tr> <?php foreach ($products as $productDescription) : ?>
+									<td id="text"> <?php echo $productDescription?> </td>
+								</tr>
+
 									<?php endforeach; ?>
-								
-									</tr>
-							</table>
+								</table>
 						     
 						       </tr>
 						 
-						   </table>
 						   <input type="submit" value="Submit Order">
 						</form>
 					</section>
