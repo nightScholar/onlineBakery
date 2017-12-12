@@ -6,16 +6,6 @@
 	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
 -->
 <html>
-
-<?php
-
-include("connectToDB.php"); //this file is used to connect to our database
-
-?>
-<style>
-
-</style>
-
 	<head>
 		<title>Shawn's Bakery</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
@@ -65,15 +55,15 @@ include("connectToDB.php"); //this file is used to connect to our database
 									<button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
 									<button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign Up</button>
 									<div id="id01" class="modal">
-										<form class="modal-content animate" action="/login.php">
+										<form class="modal-content animate" action="sign_in.html.php" method="POST">
 											<div class="imgcontainer">
 												<span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
 											</div>
 											<div class="modal_container">
 												<label style="float:Left"><b>Username</b></label>
-												<input type="text" placeholder="Enter Username" name="uname" required>
+												<input type="text" placeholder="Enter Username" name="username" required>
 												<label style="float:Left"><b>Password</b></label>
-												<input type="password" placeholder="Enter Password" name="psw" required>
+												<input type="password" placeholder="Enter Password" name="password" required>
 												<button type="submit">Login</button>
 												<input type="checkbox" checked="checked"> Remember me
 											</div>
@@ -81,7 +71,9 @@ include("connectToDB.php"); //this file is used to connect to our database
 												<button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
 												<span class="psw" style="color:#FFA69E">Forgot <a href="#">password?</a></span>
 											</div>
+											
 										</form>
+										<div style = "font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div>
 									</div>
 									<div id="id02" class="modal">
 										<form class="modal-content animate" action="/sign_up.php">
