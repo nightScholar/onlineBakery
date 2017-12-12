@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML>
 <!--
 	Horizons by TEMPLATED

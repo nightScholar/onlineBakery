@@ -8,25 +8,33 @@
 		$myusername = mysqli_real_escape_string($db,$_POST['username']);
       	$mypassword = mysqli_real_escape_string($db,$_POST['password']); 
 
-      	$sql = "SELECT userid, userType FROM `user_t` WHERE username = '$myusername' and password = '$mypassword'";
+      	$sql = "SELECT userType, password FROM `user_t` WHERE username = '$myusername'";
       	$result = mysqli_query($db,$sql);
       	$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+            
+            // bcrypt hashing password
+            $password = $row['password'];
+            $hash = password_hash($password, PASSWORD_BCRYPT, array('cost'=>11));
       	
       	$count = mysqli_num_rows($result);
       	$privilege = $row['userType'];
 
       	// one and only one row matches the login info
       	if($count ==1){
+      		if (password_verify($mypassword, $hash)){
+                      $_SESSION['login_user'] = $myusername;
+                  
+                  if ($privilege == "administrator"){
+                        header("Location: administrator/index.php");
+                        exit();
+                  } else {
+                        header("location: welcome.php");
+                        exit();
+                  }
+                  } else{
+                        $error = "Your password is not valid";
+                  }
       		
-      		$_SESSION['login_user'] = $myusername;
-      		
-      		if ($privilege == "administrator"){
-      			header("Location: administrator/index.php");
-      			exit();
-      		} else {
-      			header("location: welcome.php");
-      			exit();
-      		}
       	} else {
       		$error = "Your Login Name or Password is invalid";
       	}
@@ -45,12 +53,7 @@
             <meta http-equiv="content-type" content="text/html; charset=utf-8" />
             <meta name="description" content="" />
             <meta name="keywords" content="" />
-            <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
-            <script src="js/jquery.min.js"></script>
-            <script src="js/jquery.dropotron.min.js"></script>
-            <script src="js/skel.min.js"></script>
-            <script src="js/skel-layers.min.js"></script>
-            <script src="js/init.js"></script>
+           
             <noscript>
                   <link rel="stylesheet" href="css/skel.css" />
                   <link rel="stylesheet" href="css/style.css" />
@@ -223,4 +226,10 @@
                   </div>
 
       </body>
+       <!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+            <script src="js/jquery.min.js"></script>
+            <script src="js/jquery.dropotron.min.js"></script>
+            <script src="js/skel.min.js"></script>
+            <script src="js/skel-layers.min.js"></script>
+            <script src="js/init.js"></script>
 </html>
