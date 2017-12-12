@@ -1,4 +1,6 @@
-
+<?php
+	include('../session.php');
+	?>
 <!DOCTYPE HTML>
 <!--
 	Horizons by TEMPLATED
@@ -52,10 +54,16 @@
 									<header class="major">
 										<h2>Welcome to Shawn's bakery!</h2>
 									</header>
-									<a href="login.html" class="button alt">Sign In</a>
-									<br>
-									<br>
-									<a href="create_account.html" class="button alt">Sign Out</a>
+
+									
+									
+									<!-- create Modal login out button -->
+									<button onclick='logout()' style="width:auto;">Log Out</a></button>
+									<script>
+										function logout(){
+											window.open('logout.php',"_self");
+										}
+									</script>
 								</section>			
 							</div>
 						</div>

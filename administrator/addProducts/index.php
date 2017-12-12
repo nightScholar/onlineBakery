@@ -1,4 +1,6 @@
-
+<?php
+  include('../../session.php');
+  ?>
 <!DOCTYPE HTML>
 <!--
   Horizons by TEMPLATED
@@ -48,6 +50,13 @@
 
         </div>
       </div>
+      <!-- create Modal login out button -->
+                  <button onclick='logout()' style="width:auto;">Log Out</a></button>
+                  <script>
+                    function logout(){
+                      window.open('../logout.php',"_self");
+                    }
+                  </script>
 
     <!-- Main -->
       <div id="main" class="wrapper style1">

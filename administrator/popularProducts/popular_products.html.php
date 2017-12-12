@@ -18,6 +18,13 @@
     </style>
   </head>
   <body>
+    <!-- create Modal login out button -->
+                  <button onclick='logout()' style="width:auto;">Log Out</a></button>
+                  <script>
+                    function logout(){
+                      window.open('../logout.php',"_self");
+                    }
+                  </script>
       <p>Here is a list of the most ordered products:</p>
 
           <table>
