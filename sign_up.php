@@ -2,7 +2,7 @@
      try
 {
 
-  $pdo = new PDO('mysql:host=localhost;dbname=bakery', 'root', 'root');
+  $pdo = new PDO('mysql:host=localhost;dbname=bakery', 'Fzuo', '921026');
   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
   $pdo->exec('SET NAMES "utf8"');
 }
@@ -15,6 +15,9 @@ catch (PDOException $e)
 $error = "";
 
  if($_SERVER["REQUEST_METHOD"] == "POST"){
+    if (empty($_POST["ufname2"]) || empty($_POST["ulname2"])|| empty($_POST["uemail2"])|| empty($_POST["uphone2"])|| empty($_POST["username2"])|| empty($_POST["password2"])){
+      $error = "Sign up fields cannot be empty!";
+    } 
       
       global $FirstName,$LastName,  $Email,  $phone,  $username,  $Password, $error;
       
@@ -51,7 +54,7 @@ $error = "";
         } 
      
       //hash 
-        $hash = password_hash($password, PASSWORD_DEFAULT);
+        $hash = password_hash($password, PASSWORD_BCRYPT);
       
       
       

@@ -17,8 +17,6 @@
             
             // get bcrypt hashing password
             $hash = $row['password'];
-            $error1 = 'this is:'.$hash;
-            $error2 = 'passowrd input:'.$mypassword;
             
       	
       	$count = mysqli_num_rows($result);
@@ -94,8 +92,7 @@
                                                       <header class="major">
                                                             <h2>Welcome to Shawn's bakery!</h2>
                                                             <h2 style="color: red"><?php echo $error; ?></h2>
-                                                            <h2 style="color: red"><?php echo $error1; ?></h2>
-                                                            <h2 style="color: red"><?php echo $error2; ?></h2>
+                                                            
                                                       </header>
                                                       <!-- create Modal login in forms -->
                                                       <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
