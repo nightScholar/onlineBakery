@@ -6,7 +6,7 @@ drop table if EXISTS orderLine_t;
 
 create table user_t 
 (
-        userID          		int					not null,
+        userID          		int					not null AUTO_INCREMENT,
 		firstName				varchar(60)			not null,
 		lastName				varchar(60)			not null,
 		phoneNumber				varchar(20)			not null,

@@ -78,7 +78,7 @@
 										<div style = "font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div>
 									</div>
 									<div id="id02" class="modal">
-										<form class="modal-content animate" action="/sign_up.php">
+										<form class="modal-content animate" action="/sign_up.php" method="POST">">
 											<div class="imgcontainer">
 												<span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
 											</div>
@@ -92,10 +92,10 @@
 												<label style="float:Left"><b>Email</b></label>
 												<input type="Email" placeholder="Enter Email" name="uemail" required>
 												<label style="float:Left"><b>User Name</b></label>
-												<input type="text" placeholder="Enter Username" name="uname" required>
+												<input type="text" placeholder="Enter Username" name="username" required>
 												<label style="float:Left"><b>Password</b></label>
-												<input type="password" placeholder="Enter Password" name="psw" required>
-												<button type="submit">Login</button>
+												<input type="password" placeholder="Enter Password" name="password" required>
+												<button type="submit">">Sign Up</button>
 												<input type="checkbox" checked="checked"> Remember me
 											</div>
 											<div class="modal_container" style="background-color:#f1f1f1">
