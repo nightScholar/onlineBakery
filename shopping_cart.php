@@ -83,7 +83,8 @@
 								</tr>
 								<tr>
 									
-									 <?php foreach ($products as $productDescription): ?>
+									 <?php $_POST['']
+									 foreach ($products as $productDescription): ?>
 									<blockquote>
 										<p>
 									<?php echo htmlspecialchars($productDescription, ENT_QUOTES, 'UTF-8'); ?>
