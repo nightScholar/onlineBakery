@@ -2,14 +2,17 @@
 	//start the session before html tag
 	session_start();
 	include("config.php");
+      $error = "";
 
 	if($_SERVER["REQUEST_METHOD"] == "POST"){
 		// username and password sent from form 
 		$myusername = mysqli_real_escape_string($db,$_POST['username']);
       	$mypassword = mysqli_real_escape_string($db,$_POST['password']); 
-
       	$sql = "SELECT userType, password FROM `user_t` WHERE username = '$myusername'";
       	$result = mysqli_query($db,$sql);
+
+            if ($result) {
+
       	$row = mysqli_fetch_array($result,MYSQLI_ASSOC);
             
             // bcrypt hashing password
@@ -32,14 +35,17 @@
                         exit();
                   }
                   } else{
-                        $error = "Your password is not valid";
+                        $error = "Sorry!!Your password is not valid!";
                   }
       		
       	} else {
-      		$error = "Your Login Name or Password is invalid";
+      		$error = "Sorry!Your Login Name or Password is invalid";
       	}
 
-	}
+	}else {
+            $error = "Sorry! Your Login Name or Password is invalid!";
+      }
+}
 ?>
 <!DOCTYPE HTML>
 <!--
@@ -87,6 +93,7 @@
                                                 <section>
                                                       <header class="major">
                                                             <h2>Welcome to Shawn's bakery!</h2>
+                                                            <h2 style="color: red"><?php echo $error; ?></h2>
                                                       </header>
                                                       <!-- create Modal login in forms -->
                                                       <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
