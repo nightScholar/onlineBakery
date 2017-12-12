@@ -1,6 +1,28 @@
 <?php
 	include('session.php');
-	?>
+	
+try
+{
+
+  $sql = 'SELECT productDescription, productPrice, FROM product_t';
+  $result = $pdo->query($sql);
+}
+catch (PDOException $e)
+{
+  $error = 'Error fetching products names: ' . $e->getMessage();
+  include 'error.html.php';
+  exit();
+}
+
+while ($row = $result->fetch())
+{
+  $products[] = $row['productDescription'];
+}
+
+include 'shopping_cart.php';
+
+?>
+
 <!DOCTYPE HTML>
 <!--
 	Horizons by TEMPLATED

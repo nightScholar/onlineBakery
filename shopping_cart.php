@@ -65,39 +65,37 @@
 						all users who want to buy any baked goods to have a username and password. If we have some time left, we could build
 						in the Guest information once we get a better idea of how all of this works -->
 
+						
 						<form action="review_order.php" method="post">
 						 <table >
 						 	<tr>
 						 	    <th >Product Name</th>
-						 		<th >Price</th>
-						 		<th >Quantity</th>
+						 		<!--<th >Price</th>
+						 		<th >Quantity</th>-->
 						 		
-						     <?php foreach ($employees as $employee) 
-						     {
-						    
+						    <p>Shopping Cart:</p>
+
+							<table>
+								<tr>
+									<th>Product Name</th>
+									<th>Product Name</th>
+									<th>Price</th>
+								</tr>
+								<tr>
+									
+									 <?php foreach ($products as $productDescription): ?>
+									<blockquote>
+										<p>
+									<?php echo htmlspecialchars($productDescription, ENT_QUOTES, 'UTF-8'); ?>
+									</p>
+									</blockquote>
+									<?php endforeach; ?>
+								
+									</tr>
+							</table>
 						     
-						     
-						     ?>
-						  
-						       <tr>
-						       <td > <?php $salary = $employee['salary'];
-						     
-						     	$bdate=$employee['bdate']; 
-						 		echo $employee['lname']; ?> </td>
-						        <td > <?php echo $employee['fname']; ?> </td>
-						  
-						        
-						       <?php
-						      $empCont=contribution($salary,$bdate);
-						       
-						      ?> 
-						        <td style="text-align:right"> <?php echo $empCont; ?></td>
-						        <td style="text-align:right"> <?php echo'$' . number_format($empCont, 2) ?></td>
-						        <td style="text-align:right"> <?php printf("$%01.2f", $empCont);  ?></td>
-						        
-						          
 						       </tr>
-						     <?php }  ?>
+						 
 						   </table>
 						   <input type="submit" value="Submit Order">
 						</form>
