@@ -1,3 +1,7 @@
+<?php
+	include('session.php');
+	?>
+
 <!DOCTYPE HTML>
 <!--
 	Horizons by TEMPLATED
@@ -6,7 +10,7 @@
 -->
 <html>
 	<head>
-		<title>No Sidebar - Horizons by TEMPLATED</title>
+		<title>Shawn's Bakery</title>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<meta name="description" content="" />
 		<meta name="keywords" content="" />
@@ -22,14 +26,15 @@
 		</noscript>
 		<!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
 	</head>
-	<body class="no-sidebar" id='about_background'>
+
+	<body class="homepage">
 
 		<!-- Header -->
 			<div id="header">
 				<div class="container">
 						
 					<!-- Logo -->
-						<h1><a href="#" id="logo">Sign in</a></h1>
+						<h1><a href="#" id="logo">Shawn's Bakery</a></h1>
 					
 					<!-- Nav -->
 						<nav id="nav">
@@ -41,23 +46,55 @@
 							</ul>
 						</nav>
 
+
+					<!-- Banner -->
+						<div id="banner">
+							<div class="container">
+								<section>
+									<header class="major">
+										<h2>Welcome to Shawn's bakery! <?php echo $login_session; ?> </h2>
+									</header>
+									<!-- create Modal login in forms -->
+									<button onclick='logout()' style="width:auto;">Log Out</a></button>
+									<script>
+										function logout(){
+											window.open('logout.php',"_self");
+										}
+									</script>
+								
+								</section>			
+							</div>
+						</div>
+
 				</div>
 			</div>
 
-		<!-- Main -->
-			<div id="main" class="wrapper style1">
-				<div class="container">
-					<section>
-						<div>
-							<form>
-								<h2>Sign in</h2>
-								<input type="email" id="inputEmail" placeholder="Username" required>
-								<input type="password" id="inputPassword" placeholder="Password" required>	
-							</form>
-						</div>
-					</section>
-				</div>
+		<!-- Featured -->
+			<div class="wrapper style2">
+				<section class="container">
+					<header class="major">
+						<h2 style='font-family: HelveticaRegular'>Proud to Offer</h2>
+						<span class="byline">Our Handcrafted Cakes</span>
+					</header>
+					<div class="row no-collapse-1">
+						<section class="4u">
+							<a href="#" class="image feature"><img src="images/RedVelvet.jpg" alt=""></a>
+							<p>Red Velvet Cake</p>
+						</section>
+						<section class="4u">
+							<a href="#" class="image feature"><img src="images/Strawberry Cheescake_v2.jpg" alt=""></a>
+							<p>Strawberry Cheesecake</p>
+						</section>
+						<section class="4u">
+							<a href="#" class="image feature"><img src="images/Chocolate Bundt Cake.jpg" alt=""></a>
+							<p>Chocolate Bundt Cake </p>
+						</section>
+	
+					</div>
+				</section>
 			</div>
+
+		<!-- Main -->
 
 		<!-- Footer -->
 			<div id="footer">
