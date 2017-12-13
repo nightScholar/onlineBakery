@@ -4,6 +4,20 @@ drop table if exists product_t;
 drop table if exists order_t;
 drop table if EXISTS orderLine_t;
 
+
+create table product_t_audit 
+(
+        productID             	int         			not null,
+        productDescription      varchar(60)				not null,
+        productPrice          	double         			not null,
+        materialCost        	double             		not null,
+		action					varchar(40)				not null,
+		changedon				datetime				not null,
+       
+    CONSTRAINT product_t_audit_PK primary key (productID)
+) ;
+
+
 create table user_t 
 (
         userID          		int					not null AUTO_INCREMENT,
@@ -57,6 +71,8 @@ create table orderLine_t
     constraint orderLine_t_FK1 foreign key (orderID) references order_t(orderID),
     CONSTRAINT orderLine_t_FK2 foreign key (productID) references product_t(productID)
 ) ;
+
+
 
 
 /*make sure tables are all empty */
