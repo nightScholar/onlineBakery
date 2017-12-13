@@ -37,9 +37,9 @@
 						<nav id="nav">
 							<ul>
 								<li><a href="index.php">Home</a></li>
-								<li><a href="our_menu.html">Menu</a></li>
-								<li><a href="order_online.html">Order Online</a></li>
-								<li><a href="about_us.html">About Us</a></li>
+								<li><a href="our_menu.html.php">Menu</a></li>
+								<li><a href="order_online.html.php">Order Online</a></li>
+								<li><a href="about_us.html.php">About Us</a></li>
 							</ul>
 						</nav>
 
@@ -62,19 +62,11 @@
 						 		<th >Quantity</th>
 						  
 						       <tr>
-						       <td > <?php $salary = $employee['salary'];
-						     
-						     	$bdate=$employee['bdate']; 
-						 		echo $employee['lname']; ?> </td>
-						        <td > <?php echo $employee['fname']; ?> </td>
-					 
-						        <td style="text-align:right"> <?php echo $empCont; ?></td>
-						        <td style="text-align:right"> <?php echo'$' . number_format($empCont, 2) ?></td>
-						        <td style="text-align:right"> <?php printf("$%01.2f", $empCont);  ?></td>
-						        
-						          
+						       <td > </td>
+						       <td></td>
+						       <td></td>
 						       </tr>
-						     <?php }  ?>
+						    
 						   </table>
 					</section>
 				</div>

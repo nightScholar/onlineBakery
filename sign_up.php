@@ -13,25 +13,19 @@ catch (PDOException $e)
   exit();
 }
 $error = "";
+$message ='';
 
  if($_SERVER["REQUEST_METHOD"] == "POST"){
     if (empty($_POST["ufname2"]) || empty($_POST["ulname2"])|| empty($_POST["uemail2"])|| empty($_POST["uphone2"])|| empty($_POST["username2"])|| empty($_POST["password2"])){
       $error = "Sign up fields cannot be empty!";
     } 
-      
       global $FirstName,$LastName,  $Email,  $phone,  $username,  $Password, $error;
-      
-
-
-
       if (isset($_POST["ufname2"]))
       {    
-          // Instructions if $_POST['value'] exist
           $FirstName = $_POST["ufname2"];    
       }    
       if (isset($_POST["ulname2"]))    
       {    
-          // Instructions if $_POST['value'] exist
           $LastName = $_POST["ulname2"];    
       }         
      if(isset($_POST['uemail2'])){
@@ -39,17 +33,15 @@ $error = "";
      }
       if (isset($_POST["uphone2"]))    
       {    
-          // Instructions if $_POST['value'] exist
+         
           $phone = $_POST["uphone2"];
         } 
        if (isset($_POST["username2"]))    
-        {    
-          // Instructions if $_POST['value'] exist
+        {     
          $username = $_POST["username2"];
         } 
        if (isset($_POST["password2"]))    
         {    
-          // Instructions if $_POST['value'] exist
          $password = $_POST["password2"];
         } 
      
@@ -62,6 +54,7 @@ $error = "";
         $sql = "Insert into user_t (firstName, lastName, phoneNumber, emailAddress, username, password, userType)
         values('$FirstName', '$LastName', '$phone','$Email','$username', '$hash','customer')";
         $pdo->exec($sql);
+        $message = 'Sign Up successfully! Please sign in!';
       }
       catch(PDOException $e)
       {
@@ -174,6 +167,7 @@ $error = "";
                                                       <header class="major">
                                                             <h2>Welcome to Shawn's bakery!</h2>
                                                             <h2 style="color: red"><?php echo $error; ?></h2>
+                                                            <h2 style="color: red"><?php echo $message; ?></h2>
                                                       </header>
                                                       <!-- create Modal login in forms -->
                                                       <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>

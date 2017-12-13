@@ -1,5 +1,21 @@
 <?php
 	include('session.php');
+
+	     try
+{
+
+  $pdo = new PDO('mysql:host=localhost;dbname=bakery', 'Fzuo', '921026');
+  $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  $pdo->exec('SET NAMES "utf8"');
+}
+catch (PDOException $e)
+{
+  $error = 'Unable to connect to the database server.';
+  
+  exit();
+}
+$error = "";
+$message ='';
 	?>
 <!DOCTYPE HTML>
 <!--
@@ -78,23 +94,23 @@
 										<div style = "font-size:11px; color:#cc0000; margin-top:10px"><?php echo $error; ?></div>
 									</div>
 									<div id="id02" class="modal">
-										<form class="modal-content animate" action="/sign_up.php" method="POST">">
+										<form class="modal-content animate" action="sign_up.php" method="POST">">
 											<div class="imgcontainer">
 												<span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
 											</div>
 											<div class="modal_container">
 												<label style="float:Left"><b>First Name</b></label>
-												<input type="text" placeholder="First Name" name="ufname" required>
+												<input type="text" placeholder="First Name" name="ufname2" required>
 												<label style="float:Left"><b>Last Name</b></label>
-												<input type="text" placeholder="Last Name" name="ulname" required>
+												<input type="text" placeholder="Last Name" name="ulname2" required>
 												<label style="float:Left"><b>Phone Number</b></label>
-												<input type="text" placeholder="Enter Phone Number" name="uphone" required>
+												<input type="text" placeholder="Enter Phone Number" name="uphone2" required>
 												<label style="float:Left"><b>Email</b></label>
-												<input type="Email" placeholder="Enter Email" name="uemail" required>
+												<input type="Email" placeholder="Enter Email" name="uemail2" required>
 												<label style="float:Left"><b>User Name</b></label>
-												<input type="text" placeholder="Enter Username" name="username" required>
+												<input type="text" placeholder="Enter Username" name="username2" required>
 												<label style="float:Left"><b>Password</b></label>
-												<input type="password" placeholder="Enter Password" name="password" required>
+												<input type="password" placeholder="Enter Password" name="password2" required>
 												<button type="submit">">Sign Up</button>
 												<input type="checkbox" checked="checked"> Remember me
 											</div>

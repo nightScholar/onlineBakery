@@ -1,6 +1,26 @@
 <?php
+	
+	include('connectToDB.php');
 	include('session.php');
-	?>
+	
+try
+{
+
+  $sql = 'SELECT productDescription, productPrice FROM product_t';
+  $result = $pdo->query($sql);
+}
+catch (PDOException $e)
+{
+  $error = 'Error fetching products names: ' . $e->getMessage();
+  include 'error.html.php';
+  exit();
+}
+
+while ($row = $result->fetch())
+{
+  $products[] = $row['productDescription'];
+}
+?>
 <!DOCTYPE HTML>
 <!--
 	Horizons by TEMPLATED
@@ -67,7 +87,7 @@
 
 						
 						
-						<form action="review_order.php" method="post">
+						<form action="thank_you.php" method="post">
 						 		
 						    <p>Shopping Cart:</p>
 
@@ -78,13 +98,16 @@
   
 								<tr> <?php foreach ($products as $productDescription) : ?>
 									<td id="text"> <?php echo $productDescription?> </td>
-								</tr>
+									
+									<td><?php if(isset($_POST["quantity"])){ $quantity = $_POST['quantity'];
+									echo $quantity;
+									}; ?></td></tr>
 									<?php endforeach; ?>
+								
 								</table>
 						     
 						       </tr>
-						 
-						   <input type="submit" value="Submit Order">
+						   <button type="submit" action='thank_you.php'>Submit Order</button>
 						</form>
 					</section>
 				</div>

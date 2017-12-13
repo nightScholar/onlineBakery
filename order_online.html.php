@@ -1,28 +1,6 @@
 <?php
-	
-	include('connectToDB.php');
-	
-try
-{
-
-  $sql = 'SELECT productDescription, productPrice FROM product_t';
-  $result = $pdo->query($sql);
-}
-catch (PDOException $e)
-{
-  $error = 'Error fetching products names: ' . $e->getMessage();
-  include 'error.html.php';
-  exit();
-}
-
-while ($row = $result->fetch())
-{
-  $products[] = $row['productDescription'];
-}
-
-include 'shopping_cart.php';
-
-?>
+	include('session.php');
+	?>
 
 <!DOCTYPE HTML>
 <!--
@@ -107,6 +85,7 @@ include 'shopping_cart.php';
 													<p>Red Velvet Cake</p>
 													<form action="shopping_cart.php" method="post">
 													  <select name="quantity">
+													  	<option value="0">0</option>
 													    <option value="one">1</option>
 													    <option value="two">2</option>
 													    <option value="three">3</option>
@@ -119,7 +98,7 @@ include 'shopping_cart.php';
 													    <option value="ten">10</option>
 													  </select>
 													  <br><br>
-													  <input type="submit" value="Add to Cart">
+													  <button type="submit" action=''>Add to Cart</button>
 													</form>
 												</section>
 												<section class="4u">
@@ -127,6 +106,7 @@ include 'shopping_cart.php';
 													<p>Organic Blueberry Muffins</p>
 													<form action="shopping_cart.php" method="post">
 													  <select name="quantity">
+													  	<option value="0">0</option>
 													    <option value="one">1</option>
 													    <option value="two">2</option>
 													    <option value="three">3</option>
@@ -147,6 +127,7 @@ include 'shopping_cart.php';
 													<p> Carrot Cake Cupcakes w/ white Frosting</p>
 													<form action="shopping_cart.php" method="post">
 													  <select name="quantity">
+													  	<option value="0">0</option>
 													    <option value="one">1</option>
 													    <option value="two">2</option>
 													    <option value="three">3</option>
@@ -167,6 +148,7 @@ include 'shopping_cart.php';
 													<p>Chocolate Bundt Cake</p>
 													<form action="shopping_cart.php" method="post">
 													  <select name="quantity">
+													  	<option value="0">0</option>
 													    <option value="one">1</option>
 													    <option value="two">2</option>
 													    <option value="three">3</option>
@@ -187,6 +169,7 @@ include 'shopping_cart.php';
 													<p>Pound Cake w/ white Frosting</p>
 													<form action="shopping_cart.php" method="post">
 													  <select name="quantity">
+													  	<option value="0">0</option>
 													    <option value="one">1</option>
 													    <option value="two">2</option>
 													    <option value="three">3</option>
@@ -207,6 +190,7 @@ include 'shopping_cart.php';
 													<p>Chocolate Peanut Butter, Macadamia, Oatmeal Raisin, and Chocolate Chip Cookies</p>
 													<form action="shopping_cart.php" method="post">
 													  <select name="quantity">
+													  	<option value="0">0</option>
 													    <option value="one">1</option>
 													    <option value="two">2</option>
 													    <option value="three">3</option>
@@ -227,6 +211,7 @@ include 'shopping_cart.php';
 													<p>Sweet Potato Pie</p>
 													<form action="shopping_cart.php" method="post">
 													  <select name="quantity">
+													  	<option value="0">0</option>
 													    <option value="one">1</option>
 													    <option value="two">2</option>
 													    <option value="three">3</option>
@@ -247,6 +232,7 @@ include 'shopping_cart.php';
 													<p>Strawberry Cheesecake</p>
 													<form action="shopping_cart.php" method="post">
 													  <select name="quantity">
+													  	<option value="0">0</option>
 													    <option value="one">1</option>
 													    <option value="two">2</option>
 													    <option value="three">3</option>
@@ -267,6 +253,7 @@ include 'shopping_cart.php';
 													<p>Cheesecake</p>
 													<form action="shopping_cart.php" method="post">
 													  <select name="quantity">
+													  	<option value="0">0</option>
 													    <option value="one">1</option>
 													    <option value="two">2</option>
 													    <option value="three">3</option>
@@ -286,7 +273,8 @@ include 'shopping_cart.php';
 													<a href="#" class="image feature"><img src="images/Red Velvet Cupcakes.jpg" alt=""></a>
 													<p>Red Velvet Cupcakes</p>
 													<form action="shopping_cart.php" method="post">
-													  <select name="quantity">
+													  <select name="quantity10">
+													  	<option value="0">0</option>
 													    <option value="one">1</option>
 													    <option value="two">2</option>
 													    <option value="three">3</option>
